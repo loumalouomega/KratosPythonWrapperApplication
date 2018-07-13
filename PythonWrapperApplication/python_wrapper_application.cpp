@@ -27,6 +27,6 @@ KratosPythonWrapperApplication::KratosPythonWrapperApplication():
 void KratosPythonWrapperApplication::Register() {
     // Calling base class register to register Kratos components
     KratosApplication::Register();
-    KRATIS_INFO("") << "Initializing KratosPythonWrapperApplication... " << std::endl;
+    KRATOS_INFO("") << "Initializing KratosPythonWrapperApplication... " << std::endl;
 }
 }  // namespace Kratos.

@@ -15,7 +15,7 @@
 // External includes
 
 // Project includes
-#include "utilities/python_object_cpp_wrapper_utility.h"
+#include "custom_utilities/python_object_cpp_wrapper_utility.h"
 #include "containers/model.h"
 
 namespace Kratos

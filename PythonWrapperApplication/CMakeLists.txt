@@ -10,7 +10,7 @@ set( KRATOS_PYTHON_WRAPPER_APPLICATION_SOURCES
      ${CMAKE_CURRENT_SOURCE_DIR}/python_wrapper_application_variables.cpp
      ${CMAKE_CURRENT_SOURCE_DIR}/custom_python/python_wrapper_python_application.cpp
      ${CMAKE_CURRENT_SOURCE_DIR}/custom_python/add_custom_utilities_to_python.cpp
-     ${CMAKE_CURRENT_SOURCE_DIR}/custom_python/python_object_cpp_wrapper_utility.cpp
+     ${CMAKE_CURRENT_SOURCE_DIR}/custom_utilities/python_object_cpp_wrapper_utility.cpp
 )
 
 # define library Kratos which defines the basic python interface
