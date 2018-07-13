@@ -1,0 +1,112 @@
+ |  /           |             
+ ' /   __| _` | __|  _ \   __|
+ . \  |   (   | |   (   |\__ \ 
+_|\_\_|  \__,_|\__|\___/ ____/
+           Multi-Physics 6.0.0-42e444987f-FullDebug
+Importing    KratosStructuralMechanicsApplication 
+     KRATOS   ___|  |                   |                   |                     
+            \___ \  __|  __| |   |  __| __| |   |  __| _` | |                   
+                  | |   |    |   | (    |   |   | |   (   | |                     
+            _____/ \__|_|   \__,_|\___|\__|\__,_|_|  \__,_|_| MECHANICS     
+Importing    KratosExternalSolversApplication 
+Initializing KratosExternalSolversApplication... 
+ExternalSolversApplication: succesfully imported 
+EigenSolversApplication: not imported 
+StructuralMechanicsAnalysis: Using the old way to pass the time_step, this will be removed! 
+StructuralMechanicsAnalysis: Using the old way to pass the domain_size, this will be removed! 
+StructuralMechanicsAnalysis: Using the old way to pass the model_part_name, this will be removed! 
+::[MechanicalSolver]::  Construction finished: 
+::[StaticMechanicalSolver]::  Construction finished: 
+::[MechanicalSolver]::  Variables ADDED: 
+::[PythonSolver]::: Reading model part. 
+::[PythonSolver]::: Reading model part from file: /media/alm/Descargas/test_wrapper.gid/test_wrapper.mdpa 
+ModelPartIO:   [Reading Nodes    : 251 nodes read]
+ModelPartIO:   [Reading Elements : 444 elements read] [Type: SmallDisplacementElement2D3N]
+ModelPartIO:   [Total Lines Read : 1694]
+::[PythonSolver]::: Finished reading model part from mdpa file. 
+ModelPart: -Structure- model part
+    Buffer Size : 1
+    Number of tables : 0
+    Number of sub model parts : 3
+    Current solution step index : 0
+    DOMAIN_SIZE : 2
+    IS_RESTARTED : 0
+
+    Mesh 0 : 
+        Number of Nodes      : 251
+        Number of Properties : 1
+        Number of Elements   : 444
+        Number of Conditions : 0
+
+    -SelfWeight2D_Self_weight_Auto1- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 251
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+    -Parts_Parts_Auto1- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 251
+            Number of Properties : 0
+            Number of Elements   : 444
+            Number of Conditions : 0
+    -DISPLACEMENT_Displacement_Auto1- model part
+        Number of tables : 0
+        Number of sub model parts : 0
+
+        Mesh 0 : 
+            Number of Nodes      : 15
+            Number of Properties : 0
+            Number of Elements   : 0
+            Number of Conditions : 0
+ 
+::[PythonSolver]:: : Finished reading model part. 
+Computing model part:: -computing_domain- model part
+    Number of tables : 0
+    Number of sub model parts : 0
+
+    Mesh 0 : 
+        Number of Nodes      : 251
+        Number of Properties : 1
+        Number of Elements   : 444
+        Number of Conditions : 0
+
+ 
+::[Reading materials process]:: : Started 
+Warning in reading materials: Ignoring "KratosMultiphysics.StructuralMechanicsApplication" for Constitutive Law "LinearElasticPlaneStrain2DLaw" 
+::[Reading materials process]:: : Finished 
+::[MechanicalSolver]::  Constitutive law was successfully imported.: 
+::[MechanicalSolver]::: ModelPart prepared for Solver. 
+::[MechanicalSolver]::  DOF's ADDED: 
+StructuralMechanicsAnalysis: Using the old way to create the processes, this will be removed! 
+::[StaticMechanicalSolver]::  Initializing ...: 
+::[MechanicalSolver]::  Initializing ...: 
+::[Mechanical Solver]:: : CONVERGENCE CRITERION : residual_criterion 
+::[MechanicalSolver]::  Finished initialization.: 
+::[StaticMechanicalSolver]::  Finished initialization.: 
+::[KSM Simulation]:: : Analysis -START-  
+Setup Dofs Time: 0.00214357
+Setup System Time: 3.2179e-05
+System Matrix Resize Time: 0.00421444
+System Construction Time: 0.00641555
+::[KSM Simulation]:: : STEP:  1 
+::[KSM Simulation]:: : TIME:  1.1 
+ MESH MOVED 
+ResidualBasedBlockBuilderAndSolver: Build time: 0.0204442
+ResidualBasedBlockBuilderAndSolver: System solve time: 0.00353384
+ MESH MOVED 
+RESIDUAL CRITERION :: Ratio = 1;  Norm = 9.7926
+ResidualBasedBlockBuilderAndSolver: Build time: 0.0201581
+ResidualBasedBlockBuilderAndSolver: System solve time: 0.00285316
+ MESH MOVED 
+RESIDUAL CRITERION :: Ratio = 2.48177e-13;  Norm = 2.4303e-12
+Convergence is achieved
+::[KSM Simulation]:: : Analysis -END-  
+BuilderAndSolver: Clear Function called
+KRATOS TERMINATED CORRECTLY

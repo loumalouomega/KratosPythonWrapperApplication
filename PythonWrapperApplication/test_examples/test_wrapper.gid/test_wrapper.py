@@ -1,0 +1,2 @@
+import KratosMultiphysics
+KratosMultiphysics.PythonObjectCppWrapperUtility.RunStructuralAnalysisStage("ProjectParameters.json")
