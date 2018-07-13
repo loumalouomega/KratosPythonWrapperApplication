@@ -6,10 +6,11 @@ include_directories( ${CMAKE_SOURCE_DIR}/kratos )
 
 # generate variables with the sources
 set( KRATOS_PYTHON_WRAPPER_APPLICATION_SOURCES
-	${CMAKE_CURRENT_SOURCE_DIR}/python_wrapper_application.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/python_wrapper_application_variables.cpp
-	${CMAKE_CURRENT_SOURCE_DIR}/custom_python/python_wrapper_python_application.cpp
-	${CMAKE_CURRENT_SOURCE_DIR}/custom_python/add_custom_utilities_to_python.cpp
+     ${CMAKE_CURRENT_SOURCE_DIR}/python_wrapper_application.cpp
+     ${CMAKE_CURRENT_SOURCE_DIR}/python_wrapper_application_variables.cpp
+     ${CMAKE_CURRENT_SOURCE_DIR}/custom_python/python_wrapper_python_application.cpp
+     ${CMAKE_CURRENT_SOURCE_DIR}/custom_python/add_custom_utilities_to_python.cpp
+     ${CMAKE_CURRENT_SOURCE_DIR}/custom_python/python_object_cpp_wrapper_utility.cpp
 )
 
 # define library Kratos which defines the basic python interface
@@ -25,12 +26,12 @@ install(TARGETS KratosPythonWrapperApplication DESTINATION libs )
 
 # changing the .dll suffix to .pyd (Windows)
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-	set_target_properties(KratosPythonWrapperApplication PROPERTIES SUFFIX .pyd)
+     set_target_properties(KratosPythonWrapperApplication PROPERTIES SUFFIX .pyd)
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 
 # changing the .dylib suffix to .so (OS X)
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-	set_target_properties(KratosPythonWrapperApplication PROPERTIES SUFFIX .so)
+     set_target_properties(KratosPythonWrapperApplication PROPERTIES SUFFIX .so)
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 # install the python files

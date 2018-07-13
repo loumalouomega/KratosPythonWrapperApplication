@@ -7,25 +7,18 @@
 //  License:		 BSD License 
 //					 Kratos default license: kratos/license.txt
 //
-//  Main authors:    Author1 Fullname
-//                   Author2 Fullname 
+//  Main authors:    Vicente Mataix Ferrandiz
 //
-
 
 #if !defined(KRATOS_ADD_UTILITIES_TO_PYTHON_H_INCLUDED )
 #define  KRATOS_ADD_UTILITIES_TO_PYTHON_H_INCLUDED
 
-
-
 // System includes
-
 
 // External includes
 
-
 // Project includes
 #include "includes/define_python.h"
-
 
 namespace Kratos {
 namespace Python {

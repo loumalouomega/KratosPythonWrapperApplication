@@ -1,6 +1,7 @@
 from __future__ import print_function, absolute_import, division  # makes KratosMultiphysics backward compatible with python 2.6 and 2.7
 
 import KratosMultiphysics
+import KratosMultiphysics.PythonWrapperApplication as PythonWrapperApplication
 
 import KratosMultiphysics.KratosUnittest as KratosUnittest
 
@@ -14,7 +15,7 @@ class TestPythonObjectCppWrapperUtility(KratosUnittest.TestCase):
 
     def test_process_factory(self):
         dummy_class = DummyClass()
-        python_wrapper = KratosMultiphysics.PythonObjectCppWrapperUtility(dummy_class)
+        python_wrapper = PythonWrapperApplication.PythonObjectCppWrapperUtility(dummy_class)
         #dummy_class.DummyMethod()
         python_wrapper.Execute("DummyMethod")
         self.assertTrue(dummy_class.this_assert)
@@ -23,7 +24,7 @@ class TestPythonObjectCppWrapperUtility(KratosUnittest.TestCase):
         dummy_class1 = DummyClass()
         dummy_class2 = DummyClass()
         dummy_list = [dummy_class1, dummy_class2]
-        python_wrapper = KratosMultiphysics.PythonObjectCppWrapperUtility(dummy_list)
+        python_wrapper = PythonWrapperApplication.PythonObjectCppWrapperUtility(dummy_list)
         #dummy_class.DummyMethod()
         python_wrapper.Execute("DummyMethod")
         self.assertTrue(dummy_class1.this_assert)
