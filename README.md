@@ -1,0 +1,2 @@
+# KratosPythonWrapperApplication
+This repository contains the PythonWrapperApplication source files for KratosMultiphysics
