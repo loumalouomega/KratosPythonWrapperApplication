@@ -7,7 +7,7 @@
 //  License:		 BSD License
 //					 Kratos default license: kratos/license.txt
 //
-//  Main authors:    @{KRATOS_APP_AUTHOR}
+//  Main authors:    Vicente Mataix Ferrandiz
 //
 
 #if !defined(KRATOS_PYTHON_WRAPPER_APPLICATION_VARIABLES_H_INCLUDED )

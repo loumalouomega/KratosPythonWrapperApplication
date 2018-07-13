@@ -7,20 +7,16 @@
 //  License:		 BSD License
 //					 Kratos default license: kratos/license.txt
 //
-//  Main authors:    Pooyan Dadvand@{KRATOS_APP_AUTHOR}
+//  Main authors:    Vicente Mataix Ferrandiz
 //
-
 
 // System includes
 
-
 // External includes
-
 
 // Project includes
 #include "python_wrapper_application.h"
 #include "python_wrapper_application_variables.h"
-
 
 namespace Kratos {
 
@@ -29,10 +25,8 @@ KratosPythonWrapperApplication::KratosPythonWrapperApplication():
     {}
 
 void KratosPythonWrapperApplication::Register() {
- 	// calling base class register to register Kratos components
- 	KratosApplication::Register();
- 	std::cout << "Initializing KratosPythonWrapperApplication... " << std::endl;
-
-
+    // Calling base class register to register Kratos components
+    KratosApplication::Register();
+    KRATIS_INFO("") << "Initializing KratosPythonWrapperApplication... " << std::endl;
 }
 }  // namespace Kratos.
