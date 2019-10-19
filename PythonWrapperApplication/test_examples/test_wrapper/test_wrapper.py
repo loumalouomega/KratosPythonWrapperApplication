@@ -1,2 +1,3 @@
 import KratosMultiphysics
-KratosMultiphysics.PythonObjectCppWrapperUtility.RunStructuralAnalysisStage("ProjectParameters.json")
+import KratosMultiphysics.PythonWrapperApplication as PWA
+PWA.PythonObjectCppWrapperUtility.RunStructuralAnalysisStage("ProjectParameters.json")

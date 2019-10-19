@@ -9,7 +9,8 @@ his now allows to directly import from python, so I added the code of a "Main" t
 
 ~~~py
 import KratosMultiphysics
-KratosMultiphysics.PythonObjectCppWrapperUtility.RunStructuralAnalysisStage("ProjectParameters.json")
+import KratosMultiphysics.PythonWrapperApplication as PWA
+PWA.PythonObjectCppWrapperUtility.RunStructuralAnalysisStage("ProjectParameters.json")
 ~~~
 
 is equal to:
@@ -18,9 +19,7 @@ is equal to:
 from __future__ import print_function, absolute_import, division #makes KratosMultiphysics backward compatible with python 2.6 and 2.7
 
 import KratosMultiphysics
-import KratosMultiphysics.StructuralMechanicsApplication
-
-from structural_mechanics_analysis import StructuralMechanicsAnalysis
+from KratosMultiphysics.StructuralMechanicsApplication.structural_mechanics_analysis import StructuralMechanicsAnalysis
 
 """
 For user-scripting it is intended that a new class is derived
