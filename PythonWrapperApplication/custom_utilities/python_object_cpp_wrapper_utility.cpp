@@ -88,6 +88,7 @@ void PythonObjectCppWrapperUtility::RunAnalysisStage(
     Parameters default_stage_parameters = Parameters(R"(
     {
         "list_applications_to_import"          : ["StructuralMechanicsApplication"],
+        "analysis_stage_application"           : "StructuralMechanicsApplication"
         "analysis_stage_name"                  : "structural_mechanics_analysis.StructuralMechanicsAnalysis"
     })" );
 
@@ -105,11 +106,14 @@ void PythonObjectCppWrapperUtility::RunAnalysisStage(
         }
     }
     std::string first, second;
-    TrimComponentName(StageParameters["analysis_stage_name"].GetString(), first, second);
+    const std::string& r_analysis_stage_application = StageParameters["analysis_stage_application"].GetString();
+    const std::string& r_analysis_stage_name = StageParameters["analysis_stage_name"].GetString();
+    TrimComponentName(r_analysis_stage_name, first, second);
+    first = "KratosMultiphysics." + r_analysis_stage_application + "." + first;
     const char * char_first = first.c_str();
     const char * char_second = second.c_str();
     pybind11::object analysis = pybind11::module::import(char_first).attr(char_second);
-    pybind11::object my_analysis = analysis(model, parameters);
+    pybind11::object my_analysis = analysis(&model, parameters);
     auto run = my_analysis.attr("Run");
     run();
 }
