@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
 An example:
 
-[test_wrapper.gid](https://github.com/loumalouomega/KratosPythonWrapperApplication/tree/master/PythonWrapperApplication/test_examples/test_wrapper.gid)
+[test_wrapper](https://github.com/loumalouomega/KratosPythonWrapperApplication/tree/master/PythonWrapperApplication/test_examples/test_wrapper)
 
 ## Installation
 
