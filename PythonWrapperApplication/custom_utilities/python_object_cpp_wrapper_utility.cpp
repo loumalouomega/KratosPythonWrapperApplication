@@ -79,9 +79,9 @@ void PythonObjectCppWrapperUtility::Execute(const std::string& rNameMethod)
 /***********************************************************************************/
 
 void PythonObjectCppWrapperUtility::RunAnalysisStage(
-        const std::string& rProjectParametersFile, 
-        Parameters StageParameters
-        )
+    const std::string& rProjectParametersFile,
+    Parameters StageParameters
+    )
 {
     Parameters parameters = ReadParameters(rProjectParametersFile);
 
@@ -90,10 +90,10 @@ void PythonObjectCppWrapperUtility::RunAnalysisStage(
         "list_applications_to_import"          : ["StructuralMechanicsApplication"],
         "analysis_stage_name"                  : "structural_mechanics_analysis.StructuralMechanicsAnalysis"
     })" );
-    
+
     StageParameters.ValidateAndAssignDefaults(default_stage_parameters);
 
-    Model model = Model();
+    Model model;
 
     pybind11::object kratos = pybind11::module::import("KratosMultiphysics");
     if (StageParameters["list_applications_to_import"].IsArray()) {
@@ -121,7 +121,7 @@ void PythonObjectCppWrapperUtility::RunStructuralAnalysisStage(const std::string
 {
     Parameters parameters = ReadParameters(rProjectParametersFile);
 
-    Model model = Model();
+    Model model;
 
     pybind11::object kratos = pybind11::module::import("KratosMultiphysics");
     pybind11::object structural = pybind11::module::import("KratosMultiphysics.StructuralMechanicsApplication");
