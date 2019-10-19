@@ -43,16 +43,9 @@ An example:
 
 ## Installation
 
-Add the following lines to the applications/CMakeLists.txt according to the existent structure.
+Add the following lines to your configure.sh:
 
 ~~~sh
-PYTHON_WRAPPER_APPLICATION;\ 
-~~~
-
-and
-
-~~~sh
-if(${PYTHON_WRAPPER_APPLICATION} MATCHES ON) 
-  add_subdirectory(PythonWrapperApplication) 
-endif(${PYTHON_WRAPPER_APPLICATION} MATCHES ON) 
-~~~
+-DKRATOS_EXTERNAL_APPLICATION_DIR="this_folder/PythonWrapperApplication"  \
+-DPYTHON_WRAPPER_APPLICATION=ON                                           \
+~~~ 
