@@ -82,9 +82,7 @@ public:
      ///@name Operations
      ///@{
 
-     virtual void Register();
-
-
+    void Register() override;
 
      ///@}
      ///@name Access
@@ -101,29 +99,31 @@ public:
      ///@{
 
      /// Turn back information as a string.
-     virtual std::string Info() const {
+    std::string Info() const override
+    {
           return "KratosPythonWrapperApplication";
      }
 
      /// Print information about this object.
-     virtual void PrintInfo(std::ostream& rOStream) const {
+    void PrintInfo(std::ostream& rOStream) const override
+    {
           rOStream << Info();
           PrintData(rOStream);
      }
 
      ///// Print object's data.
-     virtual void PrintData(std::ostream& rOStream) const {
-            KRATOS_WATCH("in my application");
-            KRATOS_WATCH(KratosComponents<VariableData>::GetComponents().size() );
+    void PrintData(std::ostream& rOStream) const override
+    {
+        std::cout << "In KratosPythonWrapperApplication: " << KratosComponents<VariableData>::GetComponents().size() << " components" << std::endl;
 
-          rOStream << "Variables:" << std::endl;
-          KratosComponents<VariableData>().PrintData(rOStream);
-          rOStream << std::endl;
-          rOStream << "Elements:" << std::endl;
-          KratosComponents<Element>().PrintData(rOStream);
-          rOStream << std::endl;
-          rOStream << "Conditions:" << std::endl;
-          KratosComponents<Condition>().PrintData(rOStream);
+        rOStream << "Variables:" << std::endl;
+        KratosComponents<VariableData>().PrintData(rOStream);
+        rOStream << std::endl;
+        rOStream << "Elements:" << std::endl;
+        KratosComponents<Element>().PrintData(rOStream);
+        rOStream << std::endl;
+        rOStream << "Conditions:" << std::endl;
+        KratosComponents<Condition>().PrintData(rOStream);
     }
 
 
