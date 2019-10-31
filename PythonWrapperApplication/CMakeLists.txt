@@ -40,7 +40,5 @@ if(${INSTALL_PYTHON_FILES} MATCHES ON)
   install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/python_scripts DESTINATION applications/${CURRENT_DIR_NAME}  FILES_MATCHING PATTERN "*.py"  PATTERN ".svn" EXCLUDE)
 endif(${INSTALL_PYTHON_FILES} MATCHES ON)
 
-file(WRITE "${CMAKE_CURRENT_SOURCE_DIR}/PythonWrapperApplication.py" "from __future__ import print_function, absolute_import, division #makes KratosMultiphysics backward compatible with python 2.6 and 2.7\nimport KratosMultiphysics as KM\nfrom KratosPythonWrapperApplication import *\napplication = KratosPythonWrapperApplication()\napplication_name = \"KratosPythonWrapperApplication\"\napplication_folder = \"${CMAKE_CURRENT_SOURCE_DIR}\"\n\nKM._ImportApplicationAsModule(application, application_name, application_folder, __path__)")
-
 # Add to the KratosMultiphisics Python module
 install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/PythonWrapperApplication.py" DESTINATION "KratosMultiphysics/PythonWrapperApplication" RENAME "__init__.py")

@@ -11,7 +11,6 @@
 *.pyc
 
 # Files
-PythonWrapperApplication/PythonWrapperApplication.py
 
 # Times files
 *.time
