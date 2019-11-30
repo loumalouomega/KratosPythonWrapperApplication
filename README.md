@@ -45,6 +45,5 @@ An example:
 Add the following lines to your configure.sh:
 
 ~~~sh
--DKRATOS_EXTERNAL_APPLICATION_DIR="this_folder/PythonWrapperApplication"  \
--DPYTHON_WRAPPER_APPLICATION=ON                                           \
+add_app "/this_folder/KratosPythonWrapperApplication/PythonWrapperApplication"  \
 ~~~ 
