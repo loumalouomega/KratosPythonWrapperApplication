@@ -42,10 +42,11 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
      set_target_properties(KratosPythonWrapperApplication PROPERTIES SUFFIX .so)
 endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
-if(USE_COTIRE MATCHES ON)
-    cotire(KratosPythonWrapperCore)
-    cotire(KratosPythonWrapperApplication)
-endif(USE_COTIRE MATCHES ON)
+# Set batch size in the unity build
+IF(CMAKE_UNITY_BUILD MATCHES ON)
+    set_target_properties(KratosPythonWrapperCore PROPERTIES UNITY_BUILD_BATCH_SIZE ${KRATOS_UNITY_BUILD_BATCH_SIZE})
+    set_target_properties(KratosPythonWrapperApplication PROPERTIES UNITY_BUILD_BATCH_SIZE ${KRATOS_UNITY_BUILD_BATCH_SIZE})
+ENDIF(CMAKE_UNITY_BUILD MATCHES ON)
 
 # Add to the KratosMultiphisics Python module
 kratos_python_install(${INSTALL_PYTHON_USING_LINKS} ${CMAKE_CURRENT_SOURCE_DIR}/PythonWrapperApplication.py KratosMultiphysics/PythonWrapperApplication/__init__.py )
