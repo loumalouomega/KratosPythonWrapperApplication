@@ -1,21 +1,23 @@
 {
     "problem_data"             : {
         "problem_name"    : "test_wrapper",
-        "model_part_name" : "Structure",
-        "domain_size"     : 2,
         "parallel_type"   : "OpenMP",
-        "time_step"       : 1.1,
         "start_time"      : 0.0,
         "end_time"        : 1.0,
         "echo_level"      : 1
     },
     "solver_settings"          : {
+        "model_part_name"                    : "Structure",
         "solver_type"                        : "Static",
         "echo_level"                         : 1,
+        "domain_size"                        : 2,
         "analysis_type"                      : "non_linear",
         "model_import_settings"              : {
             "input_type"     : "mdpa",
             "input_filename" : "test_wrapper"
+        },
+        "time_stepping" : {
+            "time_step"       : 1.1
         },
         "material_import_settings"           : {
             "materials_filename" : "StructuralMaterials.json"
@@ -49,6 +51,7 @@
                 "model_part_name" : "Structure.SelfWeight2D_Self_weight_Auto1",
                 "variable_name"   : "VOLUME_ACCELERATION",
                 "modulus"         : 9.81,
+                "constrained"     : false,
                 "direction"       : [0.0,-1.0,0.0],
                 "interval"        : [0.0,"End"]
             }
@@ -62,7 +65,7 @@
             "process_name"  : "GiDOutputProcess",
             "help"          : "This process writes postprocessing files for GiD",
             "Parameters"    : {
-                "model_part_name"        : "Structure.computing_domain",
+                "model_part_name"        : "Structure",
                 "output_name"            : "test_solution",
                 "postprocess_parameters" : {
                 "result_file_configuration" : {
@@ -73,7 +76,7 @@
                     },
                     "file_label"          : "step",
                     "output_control_type" : "step",
-                    "output_frequency"    : 1,
+                    "output_interval"     : 1,
                     "body_output"         : true,
                     "node_output"         : false,
                     "skin_output"         : false,
@@ -93,13 +96,13 @@
             "process_name"  : "VtkOutputProcess",
             "help"          : "This process writes postprocessing files for Paraview",
             "Parameters"    : {
-                "model_part_name"                    : "Structure.computing_domain",
+                "model_part_name"                    : "Structure",
                 "output_control_type"                : "step",
-                "output_frequency"                   : 1,
+                "output_interval"                    : 1,
                 "file_format"                        : "binary",
                 "output_precision"                   : 7,
                 "output_sub_model_parts"             : true,
-                "folder_name"                        : "vtk_output",
+                "output_path"                        : "vtk_output",
                 "save_output_files_in_folder"        : true,
                 "nodal_solution_step_data_variables" : ["DISPLACEMENT","REACTION"],
                 "nodal_data_value_variables"         : [],
